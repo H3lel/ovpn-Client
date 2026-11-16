@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.ovpnclient.OvpnClient</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+
+  <name>OpenVPN Client</name>
+  <summary>Connect to VPNs with OpenVPN config files</summary>
+  <developer id="io.github.h3lel">
+    <name>H3lel</name>
+  </developer>
+
+  <description>
+    <p>
+      A native GNOME app for connecting to OpenVPN servers. Import the .ovpn file from
+      your VPN provider, company or router and connect with one click. No terminal needed.
+    </p>
+    <ul>
+      <li>Import .ovpn and .conf files with drag and drop or Open With</li>
+      <li>Sign in with username, password and one-time codes</li>
+      <li>Optionally save passwords in your login keyring</li>
+      <li>Live status, traffic counters and connection log</li>
+      <li>Fixes common server problems: bad pushed gateways and legacy ciphers</li>
+      <li>Stays connected in the background after closing the window</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">io.github.ovpnclient.OvpnClient.desktop</launchable>
+
+  <url type="homepage">https://github.com/H3lel/Ovpn-Client</url>
+  <url type="bugtracker">https://github.com/H3lel/Ovpn-Client/issues</url>
+  <url type="vcs-browser">https://github.com/H3lel/Ovpn-Client</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Connected to a VPN</caption>
+      <image>https://raw.githubusercontent.com/H3lel/Ovpn-Client/main/docs/screenshots/connected-light.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Dark mode</caption>
+      <image>https://raw.githubusercontent.com/H3lel/Ovpn-Client/main/docs/screenshots/connected-dark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Traffic counters and live log</caption>
+      <image>https://raw.githubusercontent.com/H3lel/Ovpn-Client/main/docs/screenshots/details-log-dark.png</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Network</category>
+  </categories>
+  <keywords>
+    <keyword>VPN</keyword>
+    <keyword>OpenVPN</keyword>
+    <keyword>ovpn</keyword>
+    <keyword>tunnel</keyword>
+    <keyword>privacy</keyword>
+  </keywords>
+  <provides>
+    <binary>ovpn-client</binary>
+    <mediatype>application/x-openvpn-profile</mediatype>
+  </provides>
+
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </supports>
+  <branding>
+    <color type="primary" scheme_preference="light">#c094ff</color>
+    <color type="primary" scheme_preference="dark">#3d2a5c</color>
+  </branding>
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="0.1.0" date="2026-11-16">
+      <url type="details">https://github.com/H3lel/Ovpn-Client/releases/tag/v0.1.0</url>
+      <description>
+        <p>First release.</p>
+      </description>
+    </release>
+  </releases>
+</component>

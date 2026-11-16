@@ -14,10 +14,11 @@ PREFIX="${XDG_DATA_HOME:-$HOME/.local/share}"
 LIB_DIR="$HOME/.local/lib/ovpn-client"
 BIN_LINK="$HOME/.local/bin/ovpn-client"
 DESKTOP="$PREFIX/applications/$APP_ID.desktop"
+METAINFO="$PREFIX/metainfo/$APP_ID.metainfo.xml"
 HERE="$(cd "$(dirname "$0")" && pwd)"
 
 if [ "${1:-}" = "--uninstall" ]; then
-    rm -rf "$LIB_DIR" "$BIN_LINK" "$DESKTOP"
+    rm -rf "$LIB_DIR" "$BIN_LINK" "$DESKTOP" "$METAINFO"
     update-desktop-database "$PREFIX/applications" 2>/dev/null || true
     echo "Uninstalled. Your imported profiles are kept in $PREFIX/ovpn-client (delete it to remove them)."
     exit 0
@@ -40,6 +41,9 @@ mkdir -p "$(dirname "$BIN_LINK")" "$(dirname "$DESKTOP")"
 ln -sf "$LIB_DIR/ovpn-client" "$BIN_LINK"
 
 sed "s|@EXEC@|$LIB_DIR/ovpn-client|" "$HERE/data/$APP_ID.desktop.in" > "$DESKTOP"
+mkdir -p "$(dirname "$METAINFO")"
+cp "$HERE/data/$APP_ID.metainfo.xml" "$METAINFO"
+
 update-desktop-database "$PREFIX/applications" 2>/dev/null || true
 
 echo "Installed. Launch “OpenVPN Client” from the app grid, or run: ovpn-client"
