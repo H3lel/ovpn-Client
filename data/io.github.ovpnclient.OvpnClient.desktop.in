@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=OpenVPN Client
+GenericName=VPN Client
+Comment=Connect to VPNs using OpenVPN config files
+Exec=@EXEC@ %F
+Icon=network-vpn-symbolic
+Terminal=false
+Categories=Network;GTK;
+Keywords=vpn;openvpn;ovpn;tunnel;
+MimeType=application/x-openvpn-profile;
+StartupNotify=true
+DBusActivatable=false
